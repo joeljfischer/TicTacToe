@@ -17,3 +17,35 @@ After all that remember that requirements of the project did not include AI, did
 network play, and certainly not chat functionality. I was just bored at the time.
 
 It's kind of ironic that the project I'm most proud of out of college is a TicTacToe game...
+
+### Compiling ([thanks infotek](https://github.com/joeljfischer/TicTacToe/issues/1))
+Compile the .java files to .class files
+
+javac *.java
+
+Create the jar file:
+
+jar cvf tictactoe.jar *.class
+
+Execute the Class with main()
+
+java -cp tictactoe.jar Core
+
+To run it without having to tell java what class has main(), create the following file in the src directory:
+
+MANIFEST.MF
+
+with the following contents:
+`
+Main-Class: Core
+
+`
+It requires that extra newline
+
+Create the jar file including the manifest:
+
+jar cmvf MANIFEST.MF tictactoe.jar *.class
+
+Execute it using the following command:
+
+java -jar tictactoe.jar
